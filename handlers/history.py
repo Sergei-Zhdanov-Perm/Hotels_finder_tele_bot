@@ -51,7 +51,8 @@ def input_city(message: Message) -> None:
                 medias = []
                 caption = f"Название отеля: {hotel[1]['name']}]\n Адрес отеля: {hotel[1]['address']}" \
                           f"\nСтоимость проживания в " \
-                          f"сутки $: {hotel[1]['price']}\nРасстояние до центра: {hotel[1]['distance']}"
+                          f"сутки $: {hotel[1]['price']}\nРасстояние до центра: {hotel[1]['distance']}\n" \
+                          f"Ссылка: https://www.hotels.com/h{hotel[0]}.Hotel-Information"
                 urls = hotel[1]['images']
                 if photo_need == 'yes':
                     for number, url in enumerate(urls):

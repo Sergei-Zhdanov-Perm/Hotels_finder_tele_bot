@@ -34,7 +34,7 @@ def get_history_response(query: str) -> dict:
     for item in records:
         hotel_id = item[2]
         history[item[2]] = {'name': item[3], 'address': item[4], 'price': item[5], 'distance': item[6]}
-        cursor.execute("SELECT * FROM images WHERE `hotel_id` = ?", (hotel_id, ))
+        cursor.execute("SELECT * FROM images WHERE `hotel_id` = ?", (f'https://www.hotels.com/h{hotel_id}.Hotel-Information', ))
         images = cursor.fetchall()
         links = []
         for link in images:

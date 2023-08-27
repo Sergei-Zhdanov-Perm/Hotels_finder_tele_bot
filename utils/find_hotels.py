@@ -78,11 +78,11 @@ def find_and_show_hotels(message: Message, data: Dict) -> None:
                 logger.info(f'Сервер вернул ответ {get_summary.status_code}')
                 if get_summary.status_code == 200:
                     summary_info = processing_json.get_summary.hotel_info(get_summary.text)
-
                     caption = f'Название: {hotel["name"]}\n ' \
                               f'Адрес: {summary_info["address"]}\n' \
                               f'Стоимость проживания в сутки: {hotel["price"]}\n ' \
-                              f'Расстояние до центра: {round(hotel["distance"], 2)} mile.\n'
+                              f'Расстояние до центра: {round(hotel["distance"], 2)} mile.\n ' \
+                              f'Ссылка: https://www.hotels.com/h{summary_info["id"]}.Hotel-Information \n'
 
                     medias = []
                     links_to_images = []
